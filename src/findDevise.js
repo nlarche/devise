@@ -7,7 +7,7 @@
 function findDevise(queue, liste, start, end) {
     for (var i = 0; i < liste.length; i++) {
 
-        var item = liste[i]
+        var item = liste[i];
 
         if (!item) {
             break;
@@ -22,19 +22,19 @@ function findDevise(queue, liste, start, end) {
         // start sens positif
         if (item[0] === start) {
             push(queue, item, true);
-            var _liste = liste.filter(filterListe)
+            var _liste = liste.filter(filterListe);
             // appel récursif avec la liste filtrée et le nouveau départ
             // départ === fin du couple courant
-            queue = findDevise(queue, _liste, item[1], end)
+            queue = findDevise(queue, _liste, item[1], end);
         }
 
         // fin sens négatif
         if (item[1] === start) {
             push(queue, item, false);
-            var _liste = liste.filter(filterListe)
+            var _liste = liste.filter(filterListe);
             // appel récursif avec la liste filtrée et le nouveau départ
             // départ === debut du couple courant
-            queue = findDevise(queue, _liste, item[0], end)
+            queue = findDevise(queue, _liste, item[0], end);
         }
     }
 
@@ -53,15 +53,15 @@ function findDevise(queue, liste, start, end) {
 function push(queue, item, sens) {  
 
     var exist = queue.filter(function find(elem) {
-        return item[0] === elem.start && item[1] === elem.end
-    })
+        return item[0] === elem.start && item[1] === elem.end;
+    });
 
     if (exist.length === 0) {
         queue.push({
             start: item[0],
             end: item[1],
             // taux ou inverse du taux
-            taux: sens ? item[2] : (1 / item[2]).toFixed(4)
+            taux: sens ? item[2] : +(1 / item[2]).toFixed(4)
         });
     }
 }

@@ -4,7 +4,7 @@ var readFile = require('./src/readFile');
 var findDevise = require('./src/findDevise');
 var calcul = require('./src/calcul');
 
-var file = readFile('fichier');
+var file = readFile(args[0]);
 
 var input = file.input; // START;VALUE;END
 var liste = file.liste;

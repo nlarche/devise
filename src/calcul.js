@@ -1,3 +1,5 @@
+// @input : montant initial
+// @queue : liste des taux
 function calcul(input, queue) {
 
     var result = input;
@@ -9,7 +11,7 @@ function calcul(input, queue) {
 
     // arondi entier 
     result = (result * 1).toFixed(0);
-    return result
+    return result;
 }
 
 module.exports = calcul;

@@ -27,8 +27,8 @@ function readFile(file) {
                 size = item;
                 break;
             default:
-                checkFormatList(item)
-                liste.push(item.split(';'))
+                checkFormatList(item);
+                liste.push(item.split(';'));
                 break;
         }
     });
@@ -37,7 +37,7 @@ function readFile(file) {
         input: input,
         size: size,
         liste: liste,
-    }
+    };
 
 }
 

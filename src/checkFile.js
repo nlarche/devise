@@ -8,8 +8,8 @@ function checkFormatInput(item) {
 
 function checkFormatSize(item) {
     // 00000
-    if (!/^\d$/.test(item)) {
-        var message = 'size Format incorrect ' + JSON.stringify(item);
+    if (!/^\d*$/.test(item)) {
+        var message = 'Size Format incorrect ' + JSON.stringify(item);
         throw new Error(message);
     }
 }
@@ -17,7 +17,7 @@ function checkFormatSize(item) {
 function checkFormatList(item) {
     // AAA;AAA;000.0
     if (!/^[A-Z]{3};[A-Z]{3};\d+(\.\d{1,4})?$/.test(item)) {
-        var message = 'Liste Format incorrect ' + JSON.stringify(item);
+        var message = 'List Format incorrect ' + JSON.stringify(item);
         throw new Error(message);
     }
 }
@@ -27,4 +27,4 @@ module.exports = {
     checkFormatInput: checkFormatInput,
     checkFormatSize: checkFormatSize,
     checkFormatList: checkFormatList
-}
+};
