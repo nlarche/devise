@@ -5,4 +5,4 @@ Application de calcul de devise
 
 # utilisation
 
-dans le repertoire `node index.js chemin_du_fichier`
+dans le repertoire source `node index.js chemin_du_fichier`
